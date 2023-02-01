@@ -1,9 +1,9 @@
 //dev container for cdk tools project 
 {
 	//basic linux container to base it off 
-	"name": "Ubuntu",
+	"name": "CDK-Devcontainer",
 	// Or use Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:jammy", //image its based off 
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-16", //image its based off 
 
 	"hostRequirements": {
 		"cpus": 2 //2 are normally recommended on a container as a minimum, can make these larger if needed
@@ -12,10 +12,10 @@
 	//commands to complete upon starting the container, this will just install the dependencies when the container opens
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "npm install", //this will install the dependencies, found that the npm run test command took too long to complete
-	//"postCreateCommand": "",
+	"postCreateCommand": "npm run build", //runs the build once docker container is created
 	//"postAttachCommand": "",
 
-	"mounts": ["source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind"],
+	"mounts": ["source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/node/.aws,type=bind"],
 
 	"containerEnv": {
 		"AWS_DEFAULT_REGION": "eu-west-2",
@@ -27,18 +27,12 @@
 	//may speed up the container starting if some of these are removed. Was just for demo purposes
 	"features": {
 		"ghcr.io/devcontainers/features/aws-cli:1": {},
-		"ghcr.io/devcontainers-contrib/features/amplify-cli:2": {},
-		"ghcr.io/devcontainers-contrib/features/aws-cdk:2": {},
-		"ghcr.io/devcontainers-contrib/features/aws-eb-cli:1": {},
-		"ghcr.io/customink/codespaces-features/sam-cli:1": {}
+		"ghcr.io/devcontainers-contrib/features/aws-cdk:2": {}
 	},
 
 	"customizations": {
 		"vscode": {
 		  "extensions": ["esbenp.prettier-vscode"]
 		}
-	  },
-
-	//I wasn't sure whether these were needed so I made port 3000 availabe just in case
-	"forwardPorts": [3000]	
+	  }
 }

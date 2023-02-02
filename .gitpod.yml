@@ -9,7 +9,7 @@ github:
     branches: true
     pullRequests: true
     pullRequestsFromForks: true
-    addCheck: false
+    addCheck: true
     addComment: true
     addBadge: true
 

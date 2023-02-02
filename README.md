@@ -1,6 +1,6 @@
 # DVLA Emerging Tech Lab CDK Tools.
 
-## Projects
+## Projects.
 
 - [Lab Common CDK](packages/lab-common-cdk): The main cdk tools.
 - [Lab Constructs](packages/lab-constructs-cdk) - Higher Level constructs similar to [CDK Patterns](https://cdkpatterns.com/).

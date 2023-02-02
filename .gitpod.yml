@@ -10,7 +10,7 @@ github:
     pullRequests: true
     pullRequestsFromForks: true
     addCheck: false
-    addComment: false
+    addComment: true
     addBadge: true
 
 tasks:

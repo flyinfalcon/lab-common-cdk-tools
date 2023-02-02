@@ -1,6 +1,6 @@
 //dev container for cdk tools project 
 {
-	//basic linux container to base it off 
+	//basic linux container to base it off
 	"name": "CDK-Devcontainer",
 	// Or use Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-16", //image its based off 
